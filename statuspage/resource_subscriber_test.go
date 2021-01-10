@@ -37,5 +37,5 @@ func testAccCheckSubscriberConfig(rand int) string {
 		page_id = var.pageid
 		email = var.email
 	}
-	`, rand, pageId)
+	`, rand, pageID)
 }

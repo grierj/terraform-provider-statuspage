@@ -11,14 +11,16 @@ import (
 
 var testAccProviders map[string]*schema.Provider
 var testAccProvider *schema.Provider
-var pageId string
+var pageID string
+var organizationID string
 
 func init() {
 	testAccProvider = Provider()
 	testAccProviders = map[string]*schema.Provider{
 		"statuspage": testAccProvider,
 	}
-	pageId = os.Getenv("STATUSPAGE_PAGE_ID")
+	pageID = os.Getenv("STATUSPAGE_PAGE_ID")
+	organizationID = os.Getenv("STATUSPAGE_ORGANIZATION_ID")
 }
 
 func isAPIKeySet() bool {
@@ -31,8 +33,15 @@ func isAPIKeySet() bool {
 	return false
 }
 
-func isPageIdSet() bool {
+func isPageIDSet() bool {
 	if os.Getenv("STATUSPAGE_PAGE_ID") != "" {
+		return true
+	}
+	return false
+}
+
+func isOrganizationIDSet() bool {
+	if os.Getenv("STATUSPAGE_ORGANIZATION_ID") != "" {
 		return true
 	}
 	return false
@@ -44,8 +53,11 @@ func testAccPreCheck(t *testing.T) {
 	if !isAPIKeySet() {
 		t.Fatal("STATUSPAGE_API_KEY or SP_API_KEY must be set for acceptance tests")
 	}
-	if !isPageIdSet() {
+	if !isPageIDSet() {
 		t.Fatal("STATUSPAGE_PAGE_ID must be set for acceptance tests")
+	}
+	if !isOrganizationIDSet() {
+		t.Fatal("STATUSPAGE_ORGANIZATION_ID must be set for acceptance tests")
 	}
 }
 

@@ -51,7 +51,7 @@ func testAccCheckComponentConfig(rand int) string {
 		status = "operational"
 		showcase = true
 	}
-	`, rand, pageId)
+	`, rand, pageID)
 }
 
 func testAccCheckComponentConfigUpdated(rand int) string {
@@ -69,5 +69,5 @@ func testAccCheckComponentConfigUpdated(rand int) string {
 		status = "major_outage"
 		showcase = false
 	}
-	`, rand, pageId)
+	`, rand, pageID)
 }

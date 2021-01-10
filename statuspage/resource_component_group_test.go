@@ -54,7 +54,7 @@ func testAccCheckComponentGroupConfig(rand int) string {
 		description = "Acc. Tests"
 		components  = ["${statuspage_component.component_1.id}"]
 	}
-	`, rand, pageId)
+	`, rand, pageID)
 }
 
 func testAccCheckComponentGroupConfigUpdated(rand int) string {
@@ -83,5 +83,5 @@ func testAccCheckComponentGroupConfigUpdated(rand int) string {
 		description = "Acc. Tests"
 		components  = ["${statuspage_component.component_1.id}", "${statuspage_component.component_2.id}"]
 	}
-	`, rand, pageId)
+	`, rand, pageID)
 }
