@@ -8,7 +8,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
 
-	sp "github.com/sbecker59/statuspage-api-client-go/api/v1/statuspage"
+	sp "github.com/grierj/statuspage-api-client-go/api/v1/statuspage"
 )
 
 func resourceIncidentRead(d *schema.ResourceData, m interface{}) error {

@@ -5,7 +5,7 @@ import (
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 
-	sp "github.com/sbecker59/statuspage-api-client-go/api/v1/statuspage"
+	sp "github.com/grierj/statuspage-api-client-go/api/v1/statuspage"
 )
 
 func resourceSubscriberRead(d *schema.ResourceData, m interface{}) error {
